@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Header */
+
+h1 {
+  display: inline-block;
+  background-color: turquoise;
+  padding-left: 2.5rem;
+  padding-right: .3rem;
+}
+
+header {
+  background-color: blueviolet;
+  padding-bottom: .3rem;
+  padding-top: .3rem;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: .6rem .6rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin: .3rem;
+  padding: .3rem;
+  /* text-decoration: underline solid 2px turquoise; */
+}
+
+nav a {
+  color: turquoise;
+}
+
+/* ---------------------------- */
+
+/* Hero Banner */
+
+.hero-banner {
+  background-image: url(../images/02-hero-bg.jpg);
+  height: 20rem;
+  width: auto;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+img {
+  width: 14rem;
+  display: flex;
+  float: right;
+  margin-right: 2.3rem;
+  margin-top: 3.5rem;
+  border: 0.3rem solid turquoise;
+  border-radius: 100%;
+}
+
+#catchphrase {
+  background-color: turquoise;
+  position: absolute;
+  top: 20rem;
+  right: 2.5rem;
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+/* Main Content/Grid */
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.page-wrapper {
+  margin: 2.5rem;
+  padding: 2.5rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 10rem fit-content(55rem);
+  grid-template-rows: auto auto 5rem;
+}
+
+
+.page-section-title {
+  border-right: .2rem solid navy;
+  text-align: right;
+  padding-right: .6rem;
+}
+
+#about-text {
+  overflow:auto;
+  max-height:20rem;
+}
+
+#contact-details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#contact-details a {
+  color: navy;
+}
+
+/* Work Grid */
+
+#work-grid {
+  display: grid;
+  gap: .6rem;
+  height: 40rem;
+  width: 55rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.5fr 1fr 1fr;   
+}
+
+.workLabel {
+  background-color: turquoise;
+  display: inline-block;
+  position: absolute;
+  bottom: .9rem;
+  padding: .4rem .2rem .2rem;
+  /* padding-top: .4rem;
+  padding-left: .2rem;
+  padding-right: .2rem; */
+  line-height: 1rem;
+}
+
+.workLabel p {
+  font-size: .75em;
+}
+
+.workContent {
+  border: 2px solid turquoise;
+  position: relative;
+}
+
+.workContent a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#portfolio1 {
+  grid-column: span 2;
+  background-image: url(../images/Climbing_Taghia.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+#portfolio2 {
+  background-image: url(../images/highheelhook.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+#portfolio3 {
+  background-image: url(../images/02-portfolio-2.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+#portfolio4 {
+  background-image: url(../images/02-portfolio-3.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+#portfolio5 {
+  background-image: url(../images/02-portfolio-4.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+/* Responsiveness */
+
+@media (max-width: 1200px) {
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-wrapper {
+    margin: 2.5rem;
+    margin-top: 1rem;
+    padding-left: 2.5rem;
+    grid-template-columns: fit-content(10rem) fit-content(55rem);
+
+  }
+
+  #work-grid {
+    gap: .6rem;
+    height: 60rem;
+    width: 40rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;   
+  }
+
+  #portfolio1 {
+    grid-column: span 1;
+  }
+
+  .page-wrapper {
+    width: 100vw;
+    margin-left: 5rem;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .page-wrapper {
+    margin: 2.5rem;
+    margin-top: 1rem;
+    padding: 2.5rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: fit-content(55rem);
+    grid-template-rows: auto auto auto auto auto 5rem;
+  }
+
+  #work-grid {
+    max-width: 40rem;
+    max-height:60rem;
+  }
+
+  .page-section-title {
+    border-bottom: .2rem solid navy;
+    border-right: none;
+    text-align: left;
+  }
+
+  #contact-details {
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 711px) {
+ 
+  h1 {
+    position: relative;
+    top: 4rem;
+  }
+
+  /* img {
+    position: relative;
+    left: 2rem;
+    top: 3rem;
+    margin: 0;
+    float: none;
+  } */
+  #work-grid {
+    width: auto;
+  }
+
+  #contact-details {
+    flex-direction:column;
+  }
+}
+
+/* this media query might be redundant because this change is already activated at 711px */
+@media(max-width: 480px){
+   #work-grid {
+    width: auto;
+  }  
+  #contact-details {
+    flex-direction:column;
+  }
+}
